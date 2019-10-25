@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="clienteREST.js"></script>
+    </head>
+
+    <body>
+        <ul class="nav justify-content-end navbar navbar-dark bg-dark " 
+            style="border-radius: 8px; margin: 0.1%; height: 50px; ">
+            <li class="nav-item">
+                <a class="nav-link"  href="inicio.html">Home</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="edituser.html">Edit Users</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link active" href="editcategories.html">Edit Categories</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="addcategory.html">Add Category</a>
+            </li> 
+            <li class="nav-item" >
+                <a class="nav-link"  href="index.html">Go Out</a>
+            </li>
+        </ul>
+
+
+        <div class="form-row" style="align-content:center; text-align: center; margin: 7%; margin-left: 10%; margin-right: 10%;">
+            <div class="form-group col-md-4">
+                <div class="card text-white bg-primary mb-3 form-group col-md-6" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit Users</h5>
+                        <p class="card-text">This option allows you to modify users who have been previously registered</p>
+                        <center>
+                            <button type="button" class="btn btn-light " 
+                                    style="width:100px; height:40px;
+                                    font-family: calibri; font-size: 15px;"
+                                    onClick="location.href = 'edituser.html'">Administrar</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                <div class="card text-white bg-success mb-3 form-group col-md-6" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit Categories</h5>
+                        <p class="card-text">This option allows you to modify categories that have been previously registered</p>
+                        <center>
+                            <button type="button" class="btn btn-light " 
+                                    style="width:100px; height:40px;
+                                    font-family: calibri; font-size: 15px;"
+                                    onClick="location.href = 'editcategories.html'">Administrar</button>
+                        </center>
+                    </div>
+                </div>
+            </div>   
+            <div class="form-group col-md-4">
+                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Add New Categories</h5>
+                        <p class="card-text">This option allows you to register new categories as desired and required</p>
+                        <center>
+                            <button type="button" class="btn btn-light " 
+                                    style="width:100px; height:40px;
+                                    font-family: calibri; font-size: 15px;"
+                                    onClick="location.href = 'addcategory.html'">Administrar</button>
+                        </center>
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group col-md-4">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Consult Users</h5>
+                        <p class="card-text">This option allows you to see the users who are registered and delete them</p>
+                        <center>
+                            <button type="button" class="btn btn-light " 
+                                    style="width:100px; height:40px;
+                                    font-family: calibri; font-size: 15px;"
+                                    onClick="location.href = 'users.html'">Administrar</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Consult Categories</h5>
+                        <p class="card-text">This option allows you to see the categories that are registered and delete them</p>
+                        <center>
+                            <button type="button" class="btn btn-light " 
+                                    style="width:100px; height:40px;
+                                    font-family: calibri; font-size: 15px;"
+                                    onClick="location.href = 'categories.html'">Administrar</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Home</h5>
+                        <p class="card-text">This option does not do anything but the index is ugly without a card.</p>
+                        <center>
+                            <button type="button" class="btn btn-light " 
+                                    style="width:100px; height:40px;
+                                    font-family: calibri; font-size: 15px;"
+                                    onClick="location.href = 'inicio.html'">Administrar</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function consultarUsuarios() {
+                rest.consultarUsuarios();
+            }
+        </script>
+
+        
+
+        
+        
+    </body>
+</html>

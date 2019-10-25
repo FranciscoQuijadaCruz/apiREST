@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Manage users</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="clienteREST.js"></script>
+    </head>
+    <body>
+
+        <ul class="nav justify-content-end navbar navbar-dark bg-dark " 
+            style="border-radius: 8px; margin: 0.1%; height: 50px; ">
+            <li class="nav-item">
+                <a class="nav-link"  href="inicio.html">Home</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="edituser.html">Edit Users</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link active" href="editcategories.html">Edit Categories</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="addcategory.html">Add Category</a>
+            </li> 
+            <li class="nav-item" >
+                <a class="nav-link"  href="index.html">Go Out</a>
+            </li>
+        </ul>
+
+
+
+
+
+        <div id="usuariotabla" style="align-content: center; margin: 5%; margin-left: 
+             10%; margin-right: 10%; font-family: calibri;">
+
+            <h1 style="font-weight: bold; font-size: 33px; text-align: center; margin-bottom: 3%;">USER TABLE</h1>
+
+             <div id="mensajeRegistro2"></div>
+            <div style="margin-right:  0%;" class="form-inline my-2 my-lg-0 justify-content-end form-row">
+               
+                
+                <div class="form-group col-md-4">
+                    <input type="text" id="ideliminar" class="form-control mr-sm-2" placeholder="Delete user by id" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <input type="button" class="btn btn-outline-success my-2 my-sm-0"   value="Delete"  type="button" id="buscar" onClick="eliminarUsuario()">
+                    </div>
+                </div >
+                <div class="form-group col-md-4">
+                    <input type="text" id="txtBusqueda" class="form-control mr-sm-2" placeholder="Search user by id" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <input type="button" class="btn btn-outline-success my-2 my-sm-0"   value="Search"  type="button" id="buscar" onClick="consultarUsuario()">
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <table  style="margin-top: 2%;" class="table" id="tablausuarios">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="listado">
+
+                <script>
+                    
+                </script>
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+        <script>
+            function consultarUsuarios(){
+                rest.consultarUsuarios();}
+            
+            
+            function consultarUsuario(){
+                    var id = $("#txtBusqueda").val();
+                rest.consultarUsuario(id);
+            }
+            
+             function eliminarUsuario(){
+                    var id = $("#ideliminar").val();
+                rest.eliminarUsuario(id);
+                
+                 
+            }   
+            
+            $(document).ready(consultarUsuarios());
+        </script>
+
+
+    </body>
+   
+</html>
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Editar usuario</title>
+        <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="clienteREST.js"></script>
+    </head>
+    <body>
+        
+        <ul class="nav justify-content-end navbar navbar-dark bg-dark " 
+            style="border-radius: 8px; margin: 0.1%; height: 50px; ">
+            <li class="nav-item">
+                <a class="nav-link"  href="inicio.html">Home</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="edituser.html">Edit Users</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link active" href="editcategories.html">Edit Categories</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="addcategory.html">Add Category</a>
+            </li> 
+            <li class="nav-item" >
+                <a class="nav-link"  href="index.html">Go Out</a>
+            </li>
+        </ul>
+        
+        
+        <div style="align-content:center; margin: 5%; margin-left: 25%; margin-right: 25%; font-family: calibri;">
+            
+            <h1 style="font-weight: bold; font-size: 33px; text-align: center;">Edit Account</h1>
+            <h4 style="text-align: center">Change your information</h4>
+            <br>
+            <div id="mensajeRegistro2"></div>
+            
+            
+               <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name2" placeholder="(e.g.) Francisco">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastname">Last name</label>
+                    <input type="text" class="form-control" id="lastname2" placeholder="(e.g.) Quijada Cruz">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="age">Age</label>
+                    <input type="text" class="form-control" id="age2" placeholder="(e.g.) 21">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address2" placeholder="(e.g.) Fuller Ford 5221 Main St Dallas Tx 72121">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email2" placeholder="(e.g.) franquijada97@gmail.com">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password2" placeholder="(e.g.) **********">
+                </div>
+            </div>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="id">Id</label>
+                    <input type="text" class="form-control" id="id2" placeholder="(e.g.) franquijada97@gmail.com">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Are you sure?</label>
+                    <button type="submit" class="btn btn-success form-control" onClick="editarUsuario()" >Register your data</button> 
+                </div>
+            </div>
+                
+
+        </div>
+        
+        <script>
+            function editarUsuario(){
+                    var id = $("#id2").val();
+                    var nombre = $("#name2").val();
+                    var apellido = $("#lastname2").val();
+                    var edad = $("#age2").val();
+                    var direccion = $("#address2").val();
+                    var email = $("#email2").val();
+                    var contrasena = $("#password2").val();
+                rest.editarUsuario(id,nombre,apellido,edad,direccion,email,contrasena);}
+            
+            
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Manage users</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="clienteREST.js"></script>
+    </head>
+    <body>
+
+        <ul class="nav justify-content-end navbar navbar-dark bg-dark " 
+            style="border-radius: 8px; margin: 0.1%; height: 50px; ">
+            <li class="nav-item">
+                <a class="nav-link"  href="inicio.html">Home</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="edituser.html">Edit Users</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link active" href="editcategories.html">Edit Categories</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="addcategory.html">Add Category</a>
+            </li> 
+            <li class="nav-item" >
+                <a class="nav-link"  href="index.html">Go Out</a>
+            </li>
+        </ul>
+
+
+
+
+
+        <div id="usuariotabla" style="align-content: center; margin: 5%; margin-left: 
+             15%; margin-right: 15%; font-family: calibri;">
+
+            <h1 style="font-weight: bold; font-size: 33px; text-align: center; margin-bottom: 7%;">CATEGORIES TABLE</h1>
+
+             <div id="mensajeRegistroCat2"></div>
+            <div style="margin-right:  0%;" class="form-inline my-2 my-lg-0 justify-content-end form-row">
+               
+                
+                <div class="form-group col-md-4">
+                    <input type="text" id="ideliminarcat" class="form-control mr-sm-2" placeholder="Delete category by id" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <input type="button" class="btn btn-outline-success my-2 my-sm-0"   value="Delete"  type="button" id="buscar" onClick="eliminarCategoria()()">
+                    </div>
+                </div >
+                <div class="form-group col-md-4">
+                    <input type="text" id="txtBusqueda1" class="form-control mr-sm-2" placeholder="Search category by id" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <input type="button" class="btn btn-outline-success my-2 my-sm-0"   value="Search"  type="button" id="buscar" onClick="consultarCategoria()()">
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <table  style="margin-top: 2%;" class="table" id="tablausuarios">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="listado1">
+
+                <script>
+                    
+                </script>
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+        <script>
+            function consultarCategorias(){
+                rest.consultarCategorias();}
+            
+            
+            function consultarCategoria(){
+                    var id = $("#txtBusqueda1").val();
+                rest.consultarCategoria(id);
+            }
+            
+            function eliminarCategoria(){
+                    var id = $("#ideliminarcat").val();
+                rest.eliminarCategoria(id);}
+            
+            $(document).ready(consultarCategorias());
+        </script>
+
+
+    </body>
+   
+</html>

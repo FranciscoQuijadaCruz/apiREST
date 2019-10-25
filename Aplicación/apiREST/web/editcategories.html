@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Edit Category</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="clienteREST.js"></script>
+    </head>
+    <body>
+        <ul class="nav justify-content-end navbar navbar-dark bg-dark " 
+            style="border-radius: 8px; margin: 0.1%; height: 50px; ">
+            <li class="nav-item">
+                <a class="nav-link"  href="inicio.html">Home</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="edituser.html">Edit Users</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link active" href="editcategories.html">Edit Categories</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="addcategory.html">Add Category</a>
+            </li> 
+            <li class="nav-item" >
+                <a class="nav-link"  href="index.html">Go Out</a>
+            </li>
+        </ul>
+        
+        <div style="background-color: #ffffff; align-content: center; margin: 4%; margin-left: 29%; margin-right: 29%; font-family: calibri;
+              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15); padding: 40px 40px; border: none; border-radius: 2px;">
+            <h1 style="text-align: left; font-weight: bold; font-size: 45px;">Edit Category </h1>
+            <br>
+            
+            <div id="mensajeRegistroCat2"></div>
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="idcat2" aria-describedby="Electronica" placeholder="(e.g.) 12">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="nomcat2" aria-describedby="Electronica" placeholder="(e.g.) electronics">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description</label>
+                <input type="text" class="form-control" id="descat2" placeholder="(e.g.) electronic articles">
+            </div>
+            <div style="margin-top: 8%;">
+                <button type="submit" class="btn btn-success" onClick="editarCategoria()">Save Changes</button>
+              <button type="button" class="btn btn-primary btnfor" onClick="location.href='addcategory.html'">Add New Category</button>
+            </div>
+
+        </div>
+        <script>
+            function editarCategoria(){
+                    var id = $("#idcat2").val();
+                    var nombre = $("#nomcat2").val();
+                    var descripcion = $("#descat2").val();
+                rest.editarCategoria(id,nombre,descripcion);}
+            
+        </script>
+    </body>
+</html>
